@@ -1,11 +1,12 @@
 def first(choice):
-    if choice == "start":
+    if choice == "yes":
         print("lets Start !!!!!1")
         while True:
             print("1. Left")
             print("2. Right")
             print("3. Dock")
-            h=input("enter you gudence")
+            print("stop")
+            h=input("enter you gudence ")
             if h== "left":
                 print("Turn Left!!!!!!!")
             elif h == "right":
@@ -32,10 +33,9 @@ print("Enter the type of dust:")
 print("1 .Normal")
 print("2. Small crystls or rocks")
 print("3. Hardr things")
-entry= int(input("enter the kind (1/2/3)"))
+entry= int(input("enter the kind (1/2/3) : "))
 sec(entry)
-print("Options:")
-print("1. Start")
+print("can we start...")
 choice = input("Enter your choice : ").lower()
 
 first(choice)
