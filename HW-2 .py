@@ -3,7 +3,7 @@ def grade_student():
     subs = ["Intro to aiMl", "DSA", "Discrete_maths", "Engineering Maths III", "German "]
     marks = []
     t = []
-    op = "pass"  # default pass
+    op = "pass"  
 
     for i in range(5):
         x = float(input(f"marks of {subs[i]} out of(100:) "))
@@ -14,7 +14,7 @@ def grade_student():
             marks.append(x)
             if x < 35:
                 op = "fail"
-                t.append(i)  # store subject index instead of mark
+                t.append(i)
 
     if 0 in marks:
         print("Result is invalid student got zero in some subject")
