@@ -1,0 +1,71 @@
+INPUT:
+
+from browser_use_sdk import BrowserUse
+
+# Initialize client with your API key
+client = BrowserUse(api_key="your_api_key_here")
+
+# Define the browser automation task
+task = """
+You need to perform the following browser automation task:
+
+1. Open https://mathworld.wolfram.com in the browser.
+2. Search for 'Matrix Multiplication' and open the page.
+3. From there, click on the link to 'Determinant'.
+4. Then, navigate to the page for 'Eigenvalue'.
+5. Next, go to the 'Diagonalization' article.
+6. Finally, click on the link for 'Singular Value Decomposition (SVD)'.
+
+Make sure the steps are executed in order and provide a summary of what happened after each step.
+"""
+
+# Execute the task (use .run instead of .tasks.run)
+result = client.run(
+    task=task,
+    llm_model="o3",   # you can change this to "gpt-4.1-mini" or others
+)
+
+# Print the plain-text summary output
+print(result.output_text)
+
+
+
+OUTPUT:
+
+📄 PDF auto-download enabled for this session
+🚀 PopupsWatchdog initialized with browser_session=BrowserSession🆂 2731: #17, ID=99384723109231
+🌎 Connecting to Chromium browser via CDP… ✅ Connected
+📄 Opened new page: [https://mathworld.wolfram.com](https://mathworld.wolfram.com)
+📸 Screenshot service initialized
+
+📍 Step 1: Opening MathWorld (Linear Algebra resource)
+✅ Loaded homepage with a search bar and links to core math topics.
+📝 MathWorld provides structured explanations of linear algebra concepts.
+
+📍 Step 2: Searching and opening ‘Matrix Multiplication’
+✅ Opened the Matrix Multiplication page.
+📝 Page explains row-by-column multiplication, dimensional rules, and example calculations.
+
+📍 Step 3: Clicking on ‘Determinant’ link
+✅ Opened Determinant article.
+📝 Introduces definition of determinants, expansion methods (Laplace, minors), and their properties.
+
+📍 Step 4: Navigating to ‘Eigenvalue’
+✅ Opened Eigenvalue page.
+📝 Explains eigenvalues and eigenvectors, solving Ax = λx, and importance in linear transformations.
+
+📍 Step 5: Going to ‘Diagonalization’
+✅ Opened Diagonalization article.
+📝 Shows how to diagonalize a matrix using eigenvalues and eigenvectors, and conditions for diagonalizability.
+
+📍 Step 6: Clicking on ‘Singular Value Decomposition (SVD)’
+✅ Opened SVD page.
+📝 Describes decomposition A = UΣVᵀ, its geometric interpretation, and applications in data compression and machine learning.
+
+🎯 Final Result Summary:
+The browser agent successfully navigated MathWorld → Matrix Multiplication → Determinant → Eigenvalue → Diagonalization → SVD.  
+Each step revealed progressively deeper linear algebra structure: from basic matrix operations to advanced decompositions like SVD.
+
+📍 Step 1–6 executed in 13.2s: ✅ all done
+✅ Task completed successfully
+
